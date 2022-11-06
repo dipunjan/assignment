@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="image-mapper.js"></script>
+    <link href="site.css" rel="stylesheet">
+</head>
+<body>
+    <div class="upload-section">
+        <input type="file" accept="image/*" onchange="loadFile(event)">
+        <div class="details-section">
+            <p>Image Name: <span id="name"></span></p>
+            <p>Dimensions: <span id="dimension"></span></p>
+            <p>MIME Type: <span id="type"></span></p>
+        </div>
+    </div>
+    
+    <div class="image-viewer">
+        <img onclick="onImageClick(event);" id="output"/>
+        <div class="popup">
+            <form action="">
+                <label>Description</label>
+                <input type="text" id="description" name="description">
+                <button onclick="onSave(event)" type="submit">Save</button>
+                <button onclick="onCancel(event)">Cancel</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <table>
+        <thead>
+          <tr>
+            <th>X Pos</th>
+            <th>Y Pos</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
