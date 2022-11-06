@@ -1,4 +1,5 @@
-// d3.json('./sample.json').then(data => {
+// Using Api to fetch data
+// d3.json(API URL for the Json).then(data => {
 //     initialiseChart(data);
 // });  
 
@@ -2063,8 +2064,7 @@ const initialiseChart = data => {
         .append('path')
         .data([data]) // binds data to the line
         .style('fill', 'none')
-        .attr('id', 'priceChart')
-        .attr('stroke', 'steelblue')
+        .attr('stroke', '#4682B4')
         .attr('stroke-width', '1.5')
         .attr('d', line);
 
@@ -2111,20 +2111,6 @@ const initialiseChart = data => {
           currentPoint['close']
         )})`
         );
-
-        focus
-            .select('line.x')
-            .attr('x1', 0)
-            .attr('x2', width - xScale(currentPoint['date']))
-            .attr('y1', 0)
-            .attr('y2', 0);
-
-        focus
-            .select('line.y')
-            .attr('x1', 0)
-            .attr('x2', 0)
-            .attr('y1', 0)
-            .attr('y2', height - yScale(currentPoint['close']));
         updateLegends(currentPoint);
     }
 
@@ -2157,7 +2143,7 @@ const initialiseChart = data => {
                     return `${d}: ${currentData[d]}`;
                 }
             })
-            .style('fill', 'white')
+            .style('fill', '#000')
             .attr('transform', 'translate(15,9)');
     };
 };
